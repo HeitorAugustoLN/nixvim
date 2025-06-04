@@ -1,0 +1,27 @@
+From fb3495ffa900e38e93d35d26a1ce51e87c9c0418 Mon Sep 17 00:00:00 2001
+From: Heitor Augusto <IAm.HeitorALN@proton.me>
+Date: Wed, 4 Jun 2025 19:51:56 -0300
+Subject: [PATCH] plugins/treesitter: prevent mkRaw over-injection by removing
+ injection.combined
+
+---
+ plugins/by-name/treesitter/injections.scm | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/plugins/by-name/treesitter/injections.scm b/plugins/by-name/treesitter/injections.scm
+index 4d7782a8..c4d3adfb 100644
+--- a/plugins/by-name/treesitter/injections.scm
++++ b/plugins/by-name/treesitter/injections.scm
+@@ -23,8 +23,7 @@
+       ((string_fragment) @injection.content
+         (#set! injection.language "lua")))
+   ]
+-  (#match? @_func "(^|\\.)mkRaw$")
+-  (#set! injection.combined))
++  (#match? @_func "(^|\\.)mkRaw$"))
+ 
+ (binding
+   attrpath: (attrpath
+-- 
+2.49.0
+
