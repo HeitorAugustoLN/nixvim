@@ -15,6 +15,7 @@
     ./colorschemes/gruvbox-material.nix
     ./colorschemes/kanagawa.nix
     ./colorschemes/kanagawa-paper.nix
+    ./colorschemes/lackluster.nix
     ./colorschemes/melange.nix
     ./colorschemes/modus.nix
     ./colorschemes/monokai-pro.nix
