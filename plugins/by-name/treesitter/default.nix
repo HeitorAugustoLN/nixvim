@@ -21,7 +21,7 @@ let
 in
 lib.nixvim.plugins.mkNeovimPlugin {
   name = "treesitter";
-  moduleName = "nvim-treesitter.configs";
+  moduleName = "nvim-treesitter";
   package = "nvim-treesitter";
 
   description = ''
@@ -373,7 +373,7 @@ lib.nixvim.plugins.mkNeovimPlugin {
         vim.opt.runtimepath:prepend(${lib.nixvim.toLuaObject cfg.settings.parser_install_dir})
       '')
       + ''
-        require('nvim-treesitter.configs').setup(${lib.nixvim.toLuaObject cfg.settings})
+        require('nvim-treesitter').setup(${lib.nixvim.toLuaObject cfg.settings})
       ''
       + (optionalString (cfg.languageRegister != { }) ''
         do
